@@ -8,7 +8,7 @@
 // Hint: Think about what data structure lets you check existence in O(1)
 
 function containsDuplicate(nums) {
-  // Your solution here
+  return new Set(nums).size !== nums.length;
 }
 
 // Tests - run with: node 01-contains-duplicate.js

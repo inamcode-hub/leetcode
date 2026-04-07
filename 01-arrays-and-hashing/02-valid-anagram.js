@@ -8,9 +8,12 @@
 // Hint: Count character frequencies
 
 function isAnagram(s, t) {
-  // Your solution here
+  if (s.length !== t.length) return false;
+  console.log(s.split('').sort().join(''));
+  console.log(t.split('').sort().join(''));
+  return s.split('').sort().join('') === t.split('').sort().join('');
 }
 
 // Tests
-console.log(isAnagram("anagram", "nagaram")); // Expected: true
-console.log(isAnagram("rat", "car")); // Expected: false
+console.log(isAnagram('anagram', 'nagaram')); // Expected: true
+console.log(isAnagram('rat', 'car')); // Expected: false
