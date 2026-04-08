@@ -86,3 +86,19 @@ function power(base, exp) {
   // TODO  (hint: base case exp === 0 returns 1, else base * power(base, exp-1))
 }
 // console.log(power(2, 5)); // 32
+
+
+// ════════════════════════════════════════════════
+// PRACTICE FROM SCRATCH — write everything below
+// without looking at the top of the file!
+// ════════════════════════════════════════════════
+// 1. Use a while loop to print 0..4
+// 2. Two pointers (left, right) on [1..6] — print pairs from outside in
+// 3. Reverse an array in-place using two pointers + swap
+// 4. Recursive `factorial(n)` with a base case
+// 5. Recursive `sumTo(n)` that returns 1+2+...+n
+// 6. Recursive `fib(n)` for fibonacci
+// 7. Use a ternary to set status = age >= 18 ? "adult" : "minor"
+// 8. Show || default and ?? nullish default
+// 9. Function `isPalindrome(s)` using two pointers
+// 10. Function `power(base, exp)` recursively

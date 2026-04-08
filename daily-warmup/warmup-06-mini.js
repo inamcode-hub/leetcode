@@ -46,3 +46,15 @@ function mostFrequentCI(words) {
   // TODO  (hint: lowercase each word before counting)
 }
 // console.log(mostFrequentCI(["Apple","apple","banana","APPLE"])); // "apple"
+
+
+// ════════════════════════════════════════════════
+// PRACTICE FROM SCRATCH — write everything below
+// without looking at the top of the file!
+// ════════════════════════════════════════════════
+// 1. Function `mostFrequent(words)` — returns the most frequent word
+// 2. Function `leastFrequent(words)` — returns the least frequent word
+// 3. Function `mostFrequentCI(words)` — case-insensitive version
+//
+// Build each one using: a frequency object, a loop over entries,
+// and tracking the best/worst as you go.

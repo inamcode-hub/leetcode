@@ -66,3 +66,15 @@ class Rectangle {
 }
 // const r = new Rectangle(4, 5);
 // console.log(r.area()); // 20
+
+
+// ════════════════════════════════════════════════
+// PRACTICE FROM SCRATCH — write everything below
+// without looking at the top of the file!
+// ════════════════════════════════════════════════
+// 1. Class `Animal` with constructor(name, sound) and method speak()
+// 2. Create an instance and call speak()
+// 3. Class `Counter` with increment(), decrement(), get() methods
+// 4. Class `Stack` with push, pop, peek, isEmpty, size
+// 5. Class `Queue` with enqueue, dequeue, size
+// 6. Class `Rectangle(w, h)` with method area()

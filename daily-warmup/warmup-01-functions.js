@@ -33,3 +33,17 @@ function isEven(n) {
 }
 // console.log(isEven(4)); // true
 // console.log(isEven(7)); // false
+
+
+// ════════════════════════════════════════════════
+// PRACTICE FROM SCRATCH — write everything below
+// without looking at the top of the file!
+// ════════════════════════════════════════════════
+// 1. Function declaration `add(a, b)` that returns a + b
+// 2. Arrow function `square(n)` that returns n * n
+// 3. Arrow function `greet(name)` with default "world", returns "Hello, <name>!"
+// 4. Function `sumOfSquares(a, b)` that uses square() inside it
+// 5. Function `max(a, b)` that returns the larger value
+// 6. Function `isEven(n)` that returns true/false
+//
+// Then console.log each one to test it.

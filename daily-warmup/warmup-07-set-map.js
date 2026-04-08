@@ -61,3 +61,16 @@ function intersection(a, b) {
   // TODO  (hint: put `a` in a Set, then filter `b` by what's in the set)
 }
 // console.log(intersection([1,2,3], [2,3,4])); // [2,3]
+
+
+// ════════════════════════════════════════════════
+// PRACTICE FROM SCRATCH — write everything below
+// without looking at the top of the file!
+// ════════════════════════════════════════════════
+// 1. Create a Set, add values (with a duplicate), check has(), delete one
+// 2. Dedupe an array using [...new Set(arr)]
+// 3. Create a Map, set 3 keys, use get/has/size
+// 4. Loop a Map with for...of and destructure [key, value]
+// 5. Build a frequency Map from ["a","b","a","c","b","a"]
+// 6. Function `hasDuplicate(arr)` using a Set
+// 7. Function `intersection(a, b)` returning common values

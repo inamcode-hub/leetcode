@@ -37,3 +37,16 @@ function countVowels(s) {
   // TODO  (hint: vowels are "aeiou", loop and check includes)
 }
 // console.log(countVowels("leetcode")); // 4
+
+
+// ════════════════════════════════════════════════
+// PRACTICE FROM SCRATCH — write everything below
+// without looking at the top of the file!
+// ════════════════════════════════════════════════
+// 1. Create a string s = "hello world", log its length and first char
+// 2. Use slice() to get "hello" and the last 5 chars
+// 3. Use split(" ") to break it into words, then join with "-"
+// 4. Check if it includes "world", and find the index of "o"
+// 5. Loop through every character with for...of and print them
+// 6. Function `reverseStr(s)` that reverses a string
+// 7. Function `countVowels(s)` that counts vowels in a string

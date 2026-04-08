@@ -79,3 +79,18 @@ function average(arr) {
   // TODO  (hint: use reduce to sum, then divide by arr.length)
 }
 // console.log(average([2,4,6,8])); // 5
+
+
+// ════════════════════════════════════════════════
+// PRACTICE FROM SCRATCH — write everything below
+// without looking at the top of the file!
+// ════════════════════════════════════════════════
+// 1. Sort [10,2,33,4,5] ascending and descending using a comparator
+// 2. Sort an array of objects by a numeric field
+// 3. Use Math.max/min/abs/floor/ceil/round/pow/sqrt
+// 4. Find the max of an array using Math.max(...arr)
+// 5. Loop an array tracking best/worst with -Infinity / Infinity
+// 6. Show integer division with Math.floor and modulo with %
+// 7. Spread two arrays into one, copy an array, extend an object
+// 8. Function `sumAll(...args)` using rest params and reduce
+// 9. Function `secondLargest(arr)` and `average(arr)`

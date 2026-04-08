@@ -50,3 +50,18 @@ function mostCommon(arr) {
   // TODO  (hint: build a freq map, then loop entries and track the best)
 }
 // console.log(mostCommon([1,2,2,3,3,3])); // 3
+
+
+// ════════════════════════════════════════════════
+// PRACTICE FROM SCRATCH — write everything below
+// without looking at the top of the file!
+// ════════════════════════════════════════════════
+// 1. Create a `user` object with name, age, and skills array
+// 2. Access values with both dot and bracket notation
+// 3. Add a new property and update an existing one
+// 4. Print Object.keys, Object.values, Object.entries
+// 5. Loop entries with for...of and destructure [key, value]
+// 6. Destructure name and age out of the object
+// 7. Build a frequency object from ["a","b","a","c","b","a"]
+// 8. Function `buildFreq(arr)` that returns a freq map
+// 9. Function `mostCommon(arr)` that returns the most frequent value

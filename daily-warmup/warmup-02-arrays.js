@@ -43,3 +43,18 @@ function squares(arr) {
   // TODO
 }
 // console.log(squares([1,2,3,4])); // [1,4,9,16]
+
+
+// ════════════════════════════════════════════════
+// PRACTICE FROM SCRATCH — write everything below
+// without looking at the top of the file!
+// ════════════════════════════════════════════════
+// 1. Create an array `nums` with values 1..5, log first and last element
+// 2. Use push() to add a value at the end and unshift() to add at the start
+// 3. Loop the array with a classic `for` loop and print index + value
+// 4. Loop the array with `for...of` and print each value
+// 5. Use map() to double every value
+// 6. Use filter() to keep only even values
+// 7. Use reduce() to get the total sum
+// 8. Function `findMax(arr)` that returns the largest value (no Math.max)
+// 9. Function `squares(arr)` that returns a new array of squared values
