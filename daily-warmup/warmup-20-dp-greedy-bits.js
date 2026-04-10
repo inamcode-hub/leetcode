@@ -271,18 +271,86 @@ function missingNumber(nums) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// DP:
-// 1. `climbStairs(n)` — two-variable Fibonacci
-// 2. `rob(nums)` — max(skip, rob + dp[i-2])
-// 3. `coinChange(coins, amount)` — dp[i] = min(dp[i-coin] + 1)
-// 4. `lengthOfLIS(nums)` — dp[i] = max(dp[j]+1) for all j < i where nums[j] < nums[i]
-//
-// GREEDY:
-// 5. `maxSubArray(nums)` — Kadane's: extend or start fresh
-// 6. `canJump(nums)` — track farthest reachable index
-//
-// BITS:
-// 7. `singleNumber(nums)` — XOR all values
-// 8. `isPowerOfTwo(n)` — n & (n-1) === 0
-// 9. `countBits(n)` — n & (n-1) loop
-// 10. `missingNumber(nums)` — XOR trick
+
+// --- DP ---
+
+// 1. Climbing stairs — how many ways to reach step n (1 or 2 steps)
+function myClimbStairs(n) {
+  // TODO — two variables like Fibonacci
+}
+console.log(myClimbStairs(2));  // Expected: 2
+console.log(myClimbStairs(3));  // Expected: 3
+console.log(myClimbStairs(5));  // Expected: 8
+
+// 2. House robber — max money without robbing adjacent houses
+function myRob(nums) {
+  // TODO — prev2, prev1; each step: max(prev1, prev2 + num)
+}
+console.log(myRob([2, 7, 9, 3, 1])); // Expected: 12
+console.log(myRob([1, 2, 3, 1]));     // Expected: 4
+
+// 3. Coin change — fewest coins to make amount
+function myCoinChange(coins, amount) {
+  // TODO — dp array filled with Infinity, dp[0] = 0
+}
+console.log(myCoinChange([1, 5, 10], 12)); // Expected: 3
+console.log(myCoinChange([2], 3));          // Expected: -1
+console.log(myCoinChange([1], 0));          // Expected: 0
+
+// 4. Longest increasing subsequence
+function myLengthOfLIS(nums) {
+  // TODO — dp[i] = 1, then for each j < i where nums[j] < nums[i]: dp[i] = max(dp[i], dp[j]+1)
+}
+console.log(myLengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18])); // Expected: 4
+console.log(myLengthOfLIS([0, 1, 0, 3, 2, 3]));             // Expected: 4
+
+// --- GREEDY ---
+
+// 5. Maximum subarray — Kadane's algorithm
+function myMaxSubArray(nums) {
+  // TODO — current = max(num, current + num), track best
+}
+console.log(myMaxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // Expected: 6
+console.log(myMaxSubArray([1]));                                // Expected: 1
+console.log(myMaxSubArray([5, 4, -1, 7, 8]));                  // Expected: 23
+
+// 6. Jump game — can you reach the last index?
+function myCanJump(nums) {
+  // TODO — track farthest reachable, if i > farthest return false
+}
+console.log(myCanJump([2, 3, 1, 1, 4])); // Expected: true
+console.log(myCanJump([3, 2, 1, 0, 4])); // Expected: false
+
+// --- BITS ---
+
+// 7. Single number — find the one that appears once (others appear twice)
+function mySingleNumber(nums) {
+  // TODO — XOR all values
+}
+console.log(mySingleNumber([4, 1, 2, 1, 2])); // Expected: 4
+console.log(mySingleNumber([2, 2, 1]));         // Expected: 1
+
+// 8. Is the number a power of 2?
+function myIsPowerOfTwo(n) {
+  // TODO — n > 0 && (n & (n - 1)) === 0
+}
+console.log(myIsPowerOfTwo(8));   // Expected: true
+console.log(myIsPowerOfTwo(6));   // Expected: false
+console.log(myIsPowerOfTwo(1));   // Expected: true
+console.log(myIsPowerOfTwo(16));  // Expected: true
+
+// 9. Count the number of 1-bits in binary
+function myCountBits(n) {
+  // TODO — n & (n-1) removes lowest set bit, count iterations
+}
+console.log(myCountBits(11));  // Expected: 3 (binary: 1011)
+console.log(myCountBits(128)); // Expected: 1 (binary: 10000000)
+console.log(myCountBits(255)); // Expected: 8 (binary: 11111111)
+
+// 10. Missing number — array has 0..n with one missing
+function myMissingNumber(nums) {
+  // TODO — XOR all indices 0..n with all values, missing one stays
+}
+console.log(myMissingNumber([3, 0, 1]));                // Expected: 2
+console.log(myMissingNumber([0, 1]));                    // Expected: 2
+console.log(myMissingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])); // Expected: 8

@@ -271,14 +271,95 @@ function isBalanced(s) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// STACK:
-// 1. `isValid(s)` — matching brackets with stack + map
-// 2. `nextGreater(nums)` — monotonic stack, stores indices
-// 3. MinStack class — stack + minStack side by side
-// 4. `evalRPN(tokens)` — evaluate postfix with stack
-// 5. `dailyTemperatures(temps)` — monotonic decreasing stack
-//
-// QUEUE:
-// 6. `levelOrder(root)` — BFS with queue, process level by level
-// 7. `shortestPath(grid)` — BFS on grid, queue stores [r, c, dist]
-// 8. MyQueue class using two stacks
+
+// --- STACK ---
+
+// 1. Valid parentheses — matching brackets with stack + map
+function myIsValid(s) {
+  // TODO — stack + map { ")": "(", "}": "{", "]": "[" }
+}
+console.log(myIsValid("()[]{}"));  // Expected: true
+console.log(myIsValid("(]"));      // Expected: false
+console.log(myIsValid("{[]}"));    // Expected: true
+console.log(myIsValid("([)]"));   // Expected: false
+
+// 2. Next greater element — monotonic stack
+function myNextGreater(nums) {
+  // TODO — stack of indices, pop when current > stack top
+}
+console.log(myNextGreater([2, 1, 2, 4, 3])); // Expected: [4, 2, 4, -1, -1]
+console.log(myNextGreater([1, 3, 2, 4]));     // Expected: [3, 4, 4, -1]
+
+// 3. MinStack — O(1) push, pop, top, getMin
+class MyMinStack {
+  constructor() {
+    // TODO — this.stack = [], this.minStack = []
+  }
+  push(val) { /* TODO */ }
+  pop() { /* TODO */ }
+  top() { /* TODO */ }
+  getMin() { /* TODO */ }
+}
+const myMS = new MyMinStack();
+myMS.push(3); myMS.push(5); myMS.push(1); myMS.push(4);
+console.log("min:", myMS.getMin()); // Expected: 1
+myMS.pop(); myMS.pop();
+console.log("min:", myMS.getMin()); // Expected: 3
+
+// 4. Evaluate Reverse Polish Notation
+function myEvalRPN(tokens) {
+  // TODO — stack, pop two for operators, push result
+}
+console.log(myEvalRPN(["2", "1", "+", "3", "*"])); // Expected: 9
+console.log(myEvalRPN(["4", "13", "5", "/", "+"])); // Expected: 6
+
+// 5. Daily temperatures — days until warmer
+function myDailyTemps(temps) {
+  // TODO — monotonic decreasing stack of indices
+}
+console.log(myDailyTemps([73, 74, 75, 71, 69, 72, 76, 73]));
+// Expected: [1, 1, 4, 2, 1, 1, 0, 0]
+
+// --- QUEUE ---
+
+// 6. Level order traversal — BFS with queue
+class MyTreeNode2 {
+  constructor(val = 0, left = null, right = null) {
+    this.val = val; this.left = left; this.right = right;
+  }
+}
+
+function myLevelOrder(root) {
+  // TODO — queue, process level by level
+}
+const myQTree = new MyTreeNode2(3,
+  new MyTreeNode2(9),
+  new MyTreeNode2(20, new MyTreeNode2(15), new MyTreeNode2(7))
+);
+console.log(myLevelOrder(myQTree)); // Expected: [[3], [9, 20], [15, 7]]
+
+// 7. Shortest path on grid — BFS, queue stores [row, col, distance]
+function myShortestPath(grid) {
+  // TODO — BFS from [0,0], mark visited, return distance when reaching bottom-right
+}
+console.log(myShortestPath([
+  [0, 0, 0],
+  [1, 1, 0],
+  [1, 1, 0],
+])); // Expected: 5
+
+// 8. Queue using two stacks
+class MyQueueFromStacks {
+  constructor() {
+    // TODO — this.pushStack = [], this.popStack = []
+  }
+  push(x) { /* TODO */ }
+  pop() { /* TODO — if popStack empty, move all from pushStack */ }
+  peek() { /* TODO */ }
+  empty() { /* TODO */ }
+}
+const myQS = new MyQueueFromStacks();
+myQS.push(1); myQS.push(2); myQS.push(3);
+console.log("peek:", myQS.peek());   // Expected: 1
+console.log("pop:", myQS.pop());     // Expected: 1
+console.log("empty:", myQS.empty()); // Expected: false

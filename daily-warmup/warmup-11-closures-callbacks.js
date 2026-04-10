@@ -170,13 +170,69 @@ function findMax(arr) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// 1. Write `makeCounter()` that returns a function — each call returns count++
-// 2. Write `memoize(fn)` that caches results by args.join(",")
-// 3. Create a memoized fibonacci using your memoize
-// 4. Sort an array of [start, end] intervals by start time
-// 5. Sort by TWO criteria: first by start, then by end (a[0]-b[0] || a[1]-b[1])
-// 6. Write `multiplier(factor)` that returns (n) => n * factor
+
+// 1. Returns a function — each call returns an incrementing count
+function myMakeCounter() {
+  // TODO — closure over a count variable
+}
+const myCounter = myMakeCounter();
+console.log(myCounter()); // Expected: 1
+console.log(myCounter()); // Expected: 2
+console.log(myCounter()); // Expected: 3
+
+// 2. Caches function results by args key
+function myMemoize(fn) {
+  // TODO — const cache = {}, return function that checks cache first
+}
+
+// 3. Memoized fibonacci using myMemoize
+const myFib = myMemoize(function (n) {
+  // TODO — if n < 2 return n, else myFib(n-1) + myFib(n-2)
+});
+console.log(myFib(10)); // Expected: 55
+console.log(myFib(40)); // Expected: 102334155
+
+// 4. Sort intervals by start time
+const myIntervals = [[3, 5], [1, 3], [2, 8], [0, 6]];
+// TODO: myIntervals.sort(...)
+console.log("by start:", myIntervals); // Expected: [[0,6],[1,3],[2,8],[3,5]]
+
+// 5. Sort by TWO criteria — first by start, then by end
+const myEvents = [[1, 5], [1, 3], [2, 4], [2, 2]];
+// TODO: myEvents.sort((a, b) => a[0] - b[0] || a[1] - b[1])
+console.log("multi-sort:", myEvents); // Expected: [[1,3],[1,5],[2,2],[2,4]]
+
+// 6. Returns a function that multiplies by factor
+function myMultiplier(factor) {
+  // TODO
+}
+const myDouble = myMultiplier(2);
+const myTriple = myMultiplier(3);
+console.log(myDouble(5));                  // Expected: 10
+console.log(myTriple(5));                  // Expected: 15
+console.log([1, 2, 3].map(myDouble));      // Expected: [2, 4, 6]
+
 // 7. Use reduce to sum an array
-// 8. Use reduce to build a frequency map from an array of strings
-// 9. Write `once(fn)` — a function wrapper that only calls fn once
-// 10. Write `sortByEnd(intervals)` — sort intervals by their end value
+const myNums = [1, 2, 3, 4, 5];
+const mySum = 0; // TODO: myNums.reduce(...)
+console.log("sum:", mySum); // Expected: 15
+
+// 8. Use reduce to build a frequency map
+const myWords = ["apple", "banana", "apple", "cherry", "banana", "apple"];
+const myFreq = {}; // TODO: myWords.reduce(...)
+console.log("freq:", myFreq); // Expected: { apple: 3, banana: 2, cherry: 1 }
+
+// 9. Returns a function that only calls fn the FIRST time, then returns cached result
+function myOnce(fn) {
+  // TODO — closure: track called + result
+}
+const mySayHi = myOnce(() => "hi!");
+console.log(mySayHi()); // Expected: "hi!"
+console.log(mySayHi()); // Expected: "hi!" (cached, fn not called again)
+
+// 10. Sort intervals by END time
+function mySortByEnd(intervals) {
+  // TODO — return sorted copy
+}
+console.log(mySortByEnd([[1, 5], [3, 2], [2, 8], [0, 1]]));
+// Expected: [[0,1],[3,2],[1,5],[2,8]]

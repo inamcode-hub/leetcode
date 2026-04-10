@@ -201,13 +201,84 @@ function isSymmetric(root) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// 1. Class `TreeNode` with constructor(val, left, right)
+
+// 1. TreeNode class
+class MyTreeNode {
+  constructor(val = 0, left = null, right = null) {
+    // TODO
+  }
+}
+
 // 2. Build a tree manually:  1 -> (2,3), 2 -> (4,5), 3 -> (null,6)
-// 3. Function `buildTree(arr)` — level-order array to tree
-// 4. Function `preorder(root)` — return array [root, left, right]
-// 5. Function `inorder(root)` — return array [left, root, right]
-// 6. Function `levelOrder(root)` — return 2D array of levels
-// 7. Function `maxDepth(root)` — 1 + max(left, right)
-// 8. Function `invertTree(root)` — swap left/right at every node
-// 9. Function `isSameTree(p, q)` — compare two trees
-// 10. Function `countNodes(root)` — total number of nodes
+// TODO: const myRoot = new MyTreeNode(1, new MyTreeNode(2, ...), new MyTreeNode(3, ...))
+
+// 3. Build tree from level-order array like [1, 2, 3, null, 4, 5, 6]
+function myBuildTree(arr) {
+  // TODO — use a queue to assign left/right children
+}
+
+// helper for printing
+function myToArrayTree(root) {
+  if (!root) return [];
+  const result = [];
+  const queue = [root];
+  while (queue.length) {
+    const node = queue.shift();
+    if (node) {
+      result.push(node.val);
+      queue.push(node.left);
+      queue.push(node.right);
+    }
+  }
+  return result;
+}
+
+const myTree = myBuildTree([1, 2, 3, null, 4, 5, 6]);
+console.log("built tree:", myToArrayTree(myTree)); // Expected: [1, 2, 3, 4, 5, 6]
+
+// 4. Preorder traversal — root, left, right
+function myPreorder(root) {
+  // TODO — if null return [], else [root.val, ...left, ...right]
+}
+console.log("preorder:", myPreorder(myTree)); // Expected: [1, 2, 4, 3, 5, 6]
+
+// 5. Inorder traversal — left, root, right
+function myInorder(root) {
+  // TODO
+}
+console.log("inorder:", myInorder(myTree)); // Expected: [2, 4, 1, 5, 3, 6]
+
+// 6. Level order — return 2D array of levels
+function myLevelOrder(root) {
+  // TODO — BFS with queue, process level by level
+}
+console.log("level order:", myLevelOrder(myTree)); // Expected: [[1], [2, 3], [4, 5, 6]]
+
+// 7. Max depth — longest root-to-leaf path
+function myMaxDepth(root) {
+  // TODO — if null return 0, else 1 + max(left, right)
+}
+console.log(myMaxDepth(myTree));  // Expected: 3
+console.log(myMaxDepth(null));     // Expected: 0
+
+// 8. Invert tree — swap left/right at every node
+function myInvertTree(root) {
+  // TODO — swap children, recurse
+}
+const myInvertTest = myBuildTree([4, 2, 7, 1, 3, 6, 9]);
+myInvertTree(myInvertTest);
+console.log("inverted:", myToArrayTree(myInvertTest)); // Expected: [4, 7, 2, 9, 6, 3, 1]
+
+// 9. Check if two trees are identical
+function myIsSameTree(p, q) {
+  // TODO — both null=true, one null=false, compare vals + recurse
+}
+console.log(myIsSameTree(myBuildTree([1, 2, 3]), myBuildTree([1, 2, 3]))); // Expected: true
+console.log(myIsSameTree(myBuildTree([1, 2, 3]), myBuildTree([1, 2, 4]))); // Expected: false
+
+// 10. Count total number of nodes
+function myCountNodes(root) {
+  // TODO — if null return 0, else 1 + count(left) + count(right)
+}
+console.log(myCountNodes(myBuildTree([1, 2, 3, 4, 5, 6]))); // Expected: 6
+console.log(myCountNodes(null));                               // Expected: 0

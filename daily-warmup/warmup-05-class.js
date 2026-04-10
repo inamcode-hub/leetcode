@@ -72,9 +72,79 @@ class Rectangle {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// 1. Class `Animal` with constructor(name, sound) and method speak()
-// 2. Create an instance and call speak()
-// 3. Class `Counter` with increment(), decrement(), get() methods
-// 4. Class `Stack` with push, pop, peek, isEmpty, size
-// 5. Class `Queue` with enqueue, dequeue, size
-// 6. Class `Rectangle(w, h)` with method area()
+
+// 1. Class Animal with constructor(name, sound) and method speak()
+class MyAnimal {
+  constructor(name, sound) {
+    // TODO
+  }
+  speak() {
+    // TODO — return `${this.name} says ${this.sound}`
+  }
+}
+const myDog = new MyAnimal("Rex", "woof");
+console.log(myDog.speak()); // Expected: "Rex says woof"
+const myCat = new MyAnimal("Mimi", "meow");
+console.log(myCat.speak()); // Expected: "Mimi says meow"
+
+// 2. Class Counter with increment(), decrement(), get()
+class MyCounter {
+  constructor() {
+    // TODO
+  }
+  increment() { /* TODO */ }
+  decrement() { /* TODO */ }
+  get() { /* TODO */ }
+}
+const myC = new MyCounter();
+myC.increment();
+myC.increment();
+myC.increment();
+myC.decrement();
+console.log("counter:", myC.get()); // Expected: 2
+
+// 3. Class Stack with push, pop, peek, isEmpty, size
+class MyStack {
+  constructor() {
+    // TODO
+  }
+  push(x) { /* TODO */ }
+  pop() { /* TODO */ }
+  peek() { /* TODO */ }
+  isEmpty() { /* TODO */ }
+  size() { /* TODO */ }
+}
+const mySt = new MyStack();
+mySt.push(1); mySt.push(2); mySt.push(3);
+console.log("peek:", mySt.peek());    // Expected: 3
+console.log("pop:", mySt.pop());      // Expected: 3
+console.log("size:", mySt.size());    // Expected: 2
+console.log("empty:", mySt.isEmpty()); // Expected: false
+
+// 4. Class Queue with enqueue, dequeue, size
+class MyQueue {
+  constructor() {
+    // TODO
+  }
+  enqueue(x) { /* TODO */ }
+  dequeue() { /* TODO */ }
+  size() { /* TODO */ }
+}
+const myQ = new MyQueue();
+myQ.enqueue(1); myQ.enqueue(2); myQ.enqueue(3);
+console.log("dequeue:", myQ.dequeue()); // Expected: 1
+console.log("size:", myQ.size());       // Expected: 2
+
+// 5. Class Rectangle with constructor(w, h) and method area()
+class MyRectangle {
+  constructor(w, h) {
+    // TODO
+  }
+  area() {
+    // TODO
+  }
+}
+const myRect = new MyRectangle(4, 5);
+console.log("area:", myRect.area()); // Expected: 20
+const myRect2 = new MyRectangle(10, 3);
+console.log("area:", myRect2.area()); // Expected: 30

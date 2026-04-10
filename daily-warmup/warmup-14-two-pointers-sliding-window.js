@@ -242,15 +242,73 @@ function longestKDistinct(s, k) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// TWO POINTERS:
-// 1. `twoSumSorted(nums, target)` — opposite ends on sorted array
-// 2. `isPalindrome(s)` — opposite ends, skip non-alphanumeric
-// 3. `removeDuplicates(nums)` — slow/fast on sorted array
-// 4. `moveZeroes(nums)` — slow/fast, push zeroes to end
-//
-// SLIDING WINDOW:
-// 5. `maxProfit(prices)` — track min price, max profit
-// 6. `lengthOfLongestSubstring(s)` — variable window + Set
-// 7. `maxSumSubarray(nums, k)` — fixed-size window
-// 8. `minSubArrayLen(target, nums)` — variable window, shrink when sum >= target
-// 9. `sortedSquares(nums)` — two pointers on sorted array with negatives
+
+// --- TWO POINTERS ---
+
+// 1. Two Sum on sorted array — opposite ends
+function myTwoSumSorted(nums, target) {
+  // TODO — left = 0, right = end, move based on sum
+}
+console.log(myTwoSumSorted([1, 3, 5, 7, 9], 8));   // Expected: [0, 4]
+console.log(myTwoSumSorted([2, 3, 4, 6], 10));      // Expected: [3, 3] or valid pair
+
+// 2. Valid palindrome — ignore non-alphanumeric, case-insensitive
+function myIsPalindrome(s) {
+  // TODO — clean string, two pointers from ends
+}
+console.log(myIsPalindrome("A man, a plan, a canal: Panama")); // Expected: true
+console.log(myIsPalindrome("race a car"));                     // Expected: false
+
+// 3. Remove duplicates from sorted array — return new length
+function myRemoveDuplicates(nums) {
+  // TODO — slow/fast pointers
+}
+const myDupArr = [1, 1, 2, 2, 3, 4, 4];
+const myNewLen = myRemoveDuplicates(myDupArr);
+console.log("unique:", myDupArr.slice(0, myNewLen)); // Expected: [1, 2, 3, 4]
+
+// 4. Move zeroes to the end, keep non-zero order
+function myMoveZeroes(nums) {
+  // TODO — slow/fast, swap non-zero to front
+}
+const myZeros = [0, 1, 0, 3, 12];
+myMoveZeroes(myZeros);
+console.log("moved:", myZeros); // Expected: [1, 3, 12, 0, 0]
+
+// --- SLIDING WINDOW ---
+
+// 5. Max profit — buy low sell high
+function myMaxProfit(prices) {
+  // TODO — track minPrice and maxProfit
+}
+console.log(myMaxProfit([7, 1, 5, 3, 6, 4])); // Expected: 5
+console.log(myMaxProfit([7, 6, 4, 3, 1]));     // Expected: 0
+
+// 6. Longest substring without repeating characters
+function myLongestSubstring(s) {
+  // TODO — sliding window with Set, shrink on duplicate
+}
+console.log(myLongestSubstring("abcabcbb")); // Expected: 3
+console.log(myLongestSubstring("bbbbb"));     // Expected: 1
+console.log(myLongestSubstring("pwwkew"));    // Expected: 3
+
+// 7. Max sum of subarray of size k (fixed window)
+function myMaxSumSubarray(nums, k) {
+  // TODO — build first window, then slide: add right, remove left
+}
+console.log(myMaxSumSubarray([2, 1, 5, 1, 3, 2], 3)); // Expected: 9
+console.log(myMaxSumSubarray([1, 4, 2, 10, 23, 3, 1, 0, 20], 4)); // Expected: 39
+
+// 8. Minimum size subarray with sum >= target
+function myMinSubArrayLen(target, nums) {
+  // TODO — variable window, shrink when sum >= target
+}
+console.log(myMinSubArrayLen(7, [2, 3, 1, 2, 4, 3])); // Expected: 2
+console.log(myMinSubArrayLen(11, [1, 1, 1, 1, 1]));    // Expected: 0
+
+// 9. Sorted squares — two pointers, fill from the back
+function mySortedSquares(nums) {
+  // TODO — left/right pointers, compare abs values, fill result right-to-left
+}
+console.log(mySortedSquares([-4, -1, 0, 3, 10])); // Expected: [0, 1, 9, 16, 100]
+console.log(mySortedSquares([-7, -3, 2, 3, 11])); // Expected: [4, 9, 9, 49, 121]

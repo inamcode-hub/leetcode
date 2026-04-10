@@ -52,9 +52,27 @@ function mostFrequentCI(words) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// 1. Function `mostFrequent(words)` — returns the most frequent word
-// 2. Function `leastFrequent(words)` — returns the least frequent word
-// 3. Function `mostFrequentCI(words)` — case-insensitive version
-//
-// Build each one using: a frequency object, a loop over entries,
-// and tracking the best/worst as you go.
+
+const testWords1 = ["a", "b", "a", "c", "b", "a"];
+const testWords2 = ["leetcode", "is", "fun", "is"];
+const testWords3 = ["Apple", "apple", "banana", "APPLE"];
+
+// 1. Returns the most frequent word
+function myMostFrequent(words) {
+  // TODO — build freq object, loop entries, track best
+}
+console.log(myMostFrequent(testWords1)); // Expected: "a"
+console.log(myMostFrequent(testWords2)); // Expected: "is"
+
+// 2. Returns the least frequent word
+function myLeastFrequent(words) {
+  // TODO — build freq object, loop entries, track worst (start with Infinity)
+}
+console.log(myLeastFrequent(testWords1)); // Expected: "c"
+console.log(myLeastFrequent(testWords2)); // Expected: "leetcode" (or "fun")
+
+// 3. Case-insensitive version — "Apple" and "apple" count as same
+function myMostFrequentCI(words) {
+  // TODO — lowercase each word before counting
+}
+console.log(myMostFrequentCI(testWords3)); // Expected: "apple"

@@ -92,13 +92,69 @@ function power(base, exp) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// 1. Use a while loop to print 0..4
-// 2. Two pointers (left, right) on [1..6] — print pairs from outside in
+
+// 1. While loop — print 0..4
+let myI = 0;
+// TODO: while loop that prints myI and increments
+// Expected output: 0, 1, 2, 3, 4
+
+// 2. Two pointers — print pairs from outside in
+const myPairs = [1, 2, 3, 4, 5, 6];
+let myLeft = 0;
+let myRight = myPairs.length - 1;
+// TODO: while (myLeft < myRight) — log pair, move both
+// Expected: (1,6) (2,5) (3,4)
+
 // 3. Reverse an array in-place using two pointers + swap
-// 4. Recursive `factorial(n)` with a base case
-// 5. Recursive `sumTo(n)` that returns 1+2+...+n
-// 6. Recursive `fib(n)` for fibonacci
-// 7. Use a ternary to set status = age >= 18 ? "adult" : "minor"
-// 8. Show || default and ?? nullish default
-// 9. Function `isPalindrome(s)` using two pointers
-// 10. Function `power(base, exp)` recursively
+const myRev = [1, 2, 3, 4, 5];
+// TODO: two pointers, swap with [a,b] = [b,a], move inward
+console.log("reversed:", myRev); // Expected: [5, 4, 3, 2, 1]
+
+// 4. Recursive factorial — base case: n <= 1 returns 1
+function myFactorial(n) {
+  // TODO
+}
+console.log(myFactorial(5));  // Expected: 120
+console.log(myFactorial(0));  // Expected: 1
+console.log(myFactorial(7));  // Expected: 5040
+
+// 5. Recursive sum 1..n — base case: n === 0 returns 0
+function mySumTo(n) {
+  // TODO
+}
+console.log(mySumTo(10));  // Expected: 55
+console.log(mySumTo(5));   // Expected: 15
+
+// 6. Recursive fibonacci — base case: n < 2 returns n
+function myFib(n) {
+  // TODO
+}
+console.log(myFib(7));   // Expected: 13
+console.log(myFib(10));  // Expected: 55
+
+// 7. Ternary — set status based on age
+const myAge = 20;
+const myStatus = ""; // TODO: myAge >= 18 ? "adult" : "minor"
+console.log("status:", myStatus); // Expected: "adult"
+
+// 8. || default and ?? nullish default
+const myName = "" || "guest";
+const myValue = null ?? "default";
+console.log("name:", myName);   // Expected: "guest"
+console.log("value:", myValue); // Expected: "default"
+
+// 9. Checks if a string is a palindrome using two pointers
+function myIsPalindrome(s) {
+  // TODO — left/right pointers, compare characters moving inward
+}
+console.log(myIsPalindrome("racecar")); // Expected: true
+console.log(myIsPalindrome("hello"));   // Expected: false
+console.log(myIsPalindrome("abba"));    // Expected: true
+
+// 10. Recursive power — base case: exp === 0 returns 1
+function myPower(base, exp) {
+  // TODO — base * myPower(base, exp - 1)
+}
+console.log(myPower(2, 5));  // Expected: 32
+console.log(myPower(3, 3));  // Expected: 27
+console.log(myPower(5, 0));  // Expected: 1

@@ -221,11 +221,66 @@ function searchMatrix(matrix, target) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// 1. `binarySearch(nums, target)` — classic, left <= right, return index or -1
-// 2. `lowerBound(nums, target)` — first index where nums[i] >= target
-// 3. `upperBound(nums, target)` — last index where nums[i] <= target
-// 4. `searchRotated(nums, target)` — check which half is sorted
-// 5. `findMin(nums)` — min in rotated sorted array
-// 6. `mySqrt(x)` — binary search the answer
-// 7. `findPeakElement(nums)` — go toward the uphill side
-// 8. `searchInsert(nums, target)` — where would target go?
+
+// 1. Classic binary search — return index or -1
+function myBinarySearch(nums, target) {
+  // TODO — left <= right, check mid
+}
+console.log(myBinarySearch([-1, 0, 3, 5, 9, 12], 9));  // Expected: 4
+console.log(myBinarySearch([-1, 0, 3, 5, 9, 12], 2));  // Expected: -1
+console.log(myBinarySearch([1, 2, 3, 4, 5, 6], 1));    // Expected: 0
+
+// 2. Lower bound — first index where nums[i] >= target
+function myLowerBound(nums, target) {
+  // TODO — left < right, don't skip mid on match
+}
+console.log(myLowerBound([1, 3, 5, 5, 5, 7, 9], 5)); // Expected: 2
+console.log(myLowerBound([1, 3, 5, 5, 5, 7, 9], 4)); // Expected: 2
+console.log(myLowerBound([1, 3, 5, 5, 5, 7, 9], 6)); // Expected: 5
+
+// 3. Upper bound — last index where nums[i] <= target
+function myUpperBound(nums, target) {
+  // TODO
+}
+console.log(myUpperBound([1, 3, 5, 5, 5, 7, 9], 5)); // Expected: 4
+console.log(myUpperBound([1, 3, 5, 5, 5, 7, 9], 6)); // Expected: 4
+
+// 4. Search in rotated sorted array
+function mySearchRotated(nums, target) {
+  // TODO — check which half is sorted, narrow down
+}
+console.log(mySearchRotated([4, 5, 6, 7, 0, 1, 2], 0)); // Expected: 4
+console.log(mySearchRotated([4, 5, 6, 7, 0, 1, 2], 3)); // Expected: -1
+console.log(mySearchRotated([1], 0));                      // Expected: -1
+
+// 5. Find minimum in rotated sorted array
+function myFindMin(nums) {
+  // TODO — if mid > right, min is in right half
+}
+console.log(myFindMin([3, 4, 5, 1, 2]));       // Expected: 1
+console.log(myFindMin([4, 5, 6, 7, 0, 1, 2])); // Expected: 0
+console.log(myFindMin([1, 2, 3, 4, 5]));        // Expected: 1
+
+// 6. Integer square root — binary search the answer
+function myMySqrt(x) {
+  // TODO — binary search for floor(sqrt(x))
+}
+console.log(myMySqrt(8));   // Expected: 2
+console.log(myMySqrt(16));  // Expected: 4
+console.log(myMySqrt(100)); // Expected: 10
+
+// 7. Find peak element — go toward uphill side
+function myFindPeak(nums) {
+  // TODO — if mid < mid+1, peak is right; else left
+}
+console.log(myFindPeak([1, 2, 3, 1]));          // Expected: 2
+console.log(myFindPeak([1, 2, 1, 3, 5, 6, 4])); // Expected: 5 (or 1)
+
+// 8. Search insert position — where target would go in sorted array
+function mySearchInsert(nums, target) {
+  // TODO — same as lowerBound
+}
+console.log(mySearchInsert([1, 3, 5, 6], 5)); // Expected: 2
+console.log(mySearchInsert([1, 3, 5, 6], 2)); // Expected: 1
+console.log(mySearchInsert([1, 3, 5, 6], 7)); // Expected: 4
+console.log(mySearchInsert([1, 3, 5, 6], 0)); // Expected: 0

@@ -114,13 +114,69 @@ function logPairs(pairs) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// 1. Array destructuring: grab first, second from [10,20,30]
-// 2. Swap two variables without a temp using [a,b] = [b,a]
-// 3. Swap two elements in an array in-place using destructuring
-// 4. Use rest (...) to split [head, ...tail] from [1,2,3,4,5]
-// 5. Object destructuring with rename: { x: col, y: row }
-// 6. Nested destructuring: pull a deep value out of { user: { name, scores: [first] } }
-// 7. Clone an array with spread [...arr] and prove the original is safe
-// 8. Push a snapshot [...current] into a result array (backtracking pattern)
-// 9. Destructure inside for...of: for (const [key, val] of map)
-// 10. Function `reverseInPlace(arr)` using two pointers + swap
+
+// 1. Array destructuring — grab first and second
+const myArr1 = [10, 20, 30];
+// TODO: const [myFirst, mySecond] = myArr1;
+console.log("first:", /* myFirst */);   // Expected: 10
+console.log("second:", /* mySecond */); // Expected: 20
+
+// 2. Swap two variables without a temp
+let myX = 1, myY = 2;
+// TODO: [myX, myY] = [myY, myX]
+console.log("swapped:", myX, myY); // Expected: 2 1
+
+// 3. Swap two elements in an array in-place
+const myArr2 = [10, 20, 30, 40, 50];
+// TODO: swap index 0 and index 4 using [arr[0], arr[4]] = [arr[4], arr[0]]
+console.log("swapped arr:", myArr2); // Expected: [50, 20, 30, 40, 10]
+
+// 4. Rest — split head from tail
+const myArr3 = [1, 2, 3, 4, 5];
+// TODO: const [myHead, ...myTail] = myArr3;
+console.log("head:", /* myHead */); // Expected: 1
+console.log("tail:", /* myTail */); // Expected: [2, 3, 4, 5]
+
+// 5. Object destructuring with rename
+const myPoint = { x: 10, y: 20 };
+// TODO: const { x: myCol, y: myRow } = myPoint;
+console.log("col:", /* myCol */); // Expected: 10
+console.log("row:", /* myRow */); // Expected: 20
+
+// 6. Nested destructuring — pull deep values
+const myData = { user: { name: "Inam", scores: [90, 85, 92] } };
+// TODO: const { user: { name: myName, scores: [myFirstScore] } } = myData;
+console.log("name:", /* myName */);        // Expected: "Inam"
+console.log("first score:", /* myFirstScore */); // Expected: 90
+
+// 7. Clone an array with spread — prove original is safe
+const myOriginal = [1, 2, 3];
+const myClone = []; // TODO: [...myOriginal]
+myClone.push(4);
+console.log("original:", myOriginal); // Expected: [1, 2, 3] — not changed!
+console.log("clone:", myClone);       // Expected: [1, 2, 3, 4]
+
+// 8. Push a snapshot into result (backtracking pattern)
+const myResult = [];
+const myCurrent = [1, 2];
+// TODO: myResult.push([...myCurrent])
+myCurrent.push(3);
+// TODO: myResult.push([...myCurrent])
+console.log("result:", myResult); // Expected: [[1,2], [1,2,3]]
+
+// 9. Destructure inside for...of on a Map
+const myMap = new Map([["a", 1], ["b", 2], ["c", 3]]);
+// TODO: for (const [key, val] of myMap) — log each
+// Expected: a => 1, b => 2, c => 3
+
+// 10. Reverse array in-place using two pointers + destructuring swap
+function myReverseInPlace(arr) {
+  // TODO: let left = 0, right = arr.length - 1; while loop + swap
+}
+const myTest = [1, 2, 3, 4, 5];
+myReverseInPlace(myTest);
+console.log("reversed:", myTest); // Expected: [5, 4, 3, 2, 1]
+
+const myTest2 = [10, 20, 30];
+myReverseInPlace(myTest2);
+console.log("reversed:", myTest2); // Expected: [30, 20, 10]

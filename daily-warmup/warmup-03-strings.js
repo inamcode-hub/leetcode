@@ -43,10 +43,42 @@ function countVowels(s) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// 1. Create a string s = "hello world", log its length and first char
-// 2. Use slice() to get "hello" and the last 5 chars
-// 3. Use split(" ") to break it into words, then join with "-"
-// 4. Check if it includes "world", and find the index of "o"
-// 5. Loop through every character with for...of and print them
-// 6. Function `reverseStr(s)` that reverses a string
-// 7. Function `countVowels(s)` that counts vowels in a string
+
+const myStr = "hello world";
+
+// 1. Log its length and first character
+// TODO: console.log length and first char
+// Expected: 11, "h"
+
+// 2. Use slice() to get "hello" and the last 5 chars ("world")
+const myFirst5 = ""; // TODO: myStr.slice(...)
+const myLast5 = "";  // TODO: myStr.slice(...)
+console.log("first5:", myFirst5); // Expected: "hello"
+console.log("last5:", myLast5);   // Expected: "world"
+
+// 3. Split into words, then join with "-"
+const myWords = []; // TODO: myStr.split(...)
+const myJoined = ""; // TODO: myWords.join(...)
+console.log("words:", myWords);   // Expected: ["hello", "world"]
+console.log("joined:", myJoined); // Expected: "hello-world"
+
+// 4. Check includes and indexOf
+// TODO: console.log includes "world" and indexOf "o"
+// Expected: true, 4
+
+// 5. Loop through every character with for...of
+// TODO: for (const c of myStr) — print each
+
+// 6. Reverses a string
+function myReverseStr(str) {
+  // TODO
+}
+console.log(myReverseStr("hello"));   // Expected: "olleh"
+console.log(myReverseStr("abcdef"));  // Expected: "fedcba"
+
+// 7. Counts vowels in a string (a, e, i, o, u)
+function myCountVowels(str) {
+  // TODO
+}
+console.log(myCountVowels("leetcode"));    // Expected: 4
+console.log(myCountVowels("hello world")); // Expected: 3

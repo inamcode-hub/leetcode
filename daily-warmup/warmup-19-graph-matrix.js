@@ -307,15 +307,73 @@ function solve(board) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// GRID:
-// 1. DIRS array: [[1,0],[-1,0],[0,1],[0,-1]]
-// 2. `inBounds(grid, r, c)` helper
-// 3. `numIslands(grid)` — DFS, sink visited land
-// 4. `floodFill(image, sr, sc, color)` — DFS from start
-//
-// GRAPH:
-// 5. `buildGraph(n, edges)` — adjacency list from edge list
-// 6. `dfsGraph(graph, start)` — visit all nodes from start
-// 7. `bfsGraph(graph, start)` — level-order visit
-// 8. `countComponents(n, edges)` — DFS each unvisited node
-// 9. `hasCycle(n, edges)` — DFS with parent tracking
+
+// --- GRID ---
+
+// 1. The 4 directions constant
+const MY_DIRS = []; // TODO: [[1,0],[-1,0],[0,1],[0,-1]]
+
+// 2. Check if position is valid
+function myInBounds(grid, r, c) {
+  // TODO — r >= 0 && r < rows && c >= 0 && c < cols
+}
+
+// 3. Number of Islands — DFS, sink visited land to "0"
+function myNumIslands(grid) {
+  // TODO — loop grid, when find "1": count++, dfs to sink connected land
+}
+console.log(myNumIslands([
+  ["1", "1", "0", "0"],
+  ["1", "0", "0", "0"],
+  ["0", "0", "1", "1"],
+])); // Expected: 2
+
+console.log(myNumIslands([
+  ["1", "1", "1"],
+  ["0", "1", "0"],
+  ["1", "1", "1"],
+])); // Expected: 1
+
+// 4. Flood Fill — change color of connected region
+function myFloodFill(image, sr, sc, color) {
+  // TODO — save original color, DFS and replace
+}
+const myImg = [[1, 1, 1], [1, 1, 0], [1, 0, 1]];
+console.log(myFloodFill(myImg, 1, 1, 2));
+// Expected: [[2,2,2],[2,2,0],[2,0,1]]
+
+// --- GRAPH ---
+
+// 5. Build adjacency list from edges
+function myBuildGraph(n, edges) {
+  // TODO — Array.from({length: n}, () => []), loop edges
+}
+console.log(myBuildGraph(4, [[0, 1], [0, 2], [1, 3]]));
+// Expected: [[1,2],[0,3],[0],[1]]
+
+// 6. DFS on a graph — return all visited nodes
+function myDfsGraph(graph, start) {
+  // TODO — visited Set, recursive dfs
+}
+const myGraph = myBuildGraph(5, [[0, 1], [0, 2], [1, 3], [2, 4]]);
+console.log(myDfsGraph(myGraph, 0)); // Expected: [0, 1, 3, 2, 4]
+
+// 7. BFS on a graph — return nodes in BFS order
+function myBfsGraph(graph, start) {
+  // TODO — queue + visited Set
+}
+console.log(myBfsGraph(myGraph, 0)); // Expected: [0, 1, 2, 3, 4]
+
+// 8. Count connected components
+function myCountComponents(n, edges) {
+  // TODO — build graph, DFS from each unvisited node, count groups
+}
+console.log(myCountComponents(5, [[0, 1], [2, 3]])); // Expected: 3
+console.log(myCountComponents(4, [[0, 1], [1, 2], [2, 3]])); // Expected: 1
+
+// 9. Detect cycle in undirected graph — DFS with parent tracking
+function myHasCycle(n, edges) {
+  // TODO — if visited neighbor is not parent, cycle found
+}
+console.log(myHasCycle(4, [[0, 1], [1, 2], [2, 0]])); // Expected: true
+console.log(myHasCycle(4, [[0, 1], [1, 2], [2, 3]])); // Expected: false

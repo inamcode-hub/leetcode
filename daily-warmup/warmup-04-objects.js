@@ -56,12 +56,41 @@ function mostCommon(arr) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// 1. Create a `user` object with name, age, and skills array
-// 2. Access values with both dot and bracket notation
-// 3. Add a new property and update an existing one
-// 4. Print Object.keys, Object.values, Object.entries
+
+// 1. Create a user object with name, age, and skills array
+const myUser = {}; // TODO: fill in name, age, skills
+
+// 2. Access values with dot and bracket notation
+// TODO: console.log(myUser.name) and console.log(myUser["age"])
+
+// 3. Add a new property "city" and update "age"
+// TODO: myUser.city = ... and myUser.age = ...
+console.log("updated user:", myUser);
+
+// 4. Print keys, values, entries
+// TODO: console.log Object.keys, Object.values, Object.entries of myUser
+
 // 5. Loop entries with for...of and destructure [key, value]
+// TODO: for (const [k, v] of Object.entries(myUser)) ...
+
 // 6. Destructure name and age out of the object
-// 7. Build a frequency object from ["a","b","a","c","b","a"]
-// 8. Function `buildFreq(arr)` that returns a freq map
-// 9. Function `mostCommon(arr)` that returns the most frequent value
+// TODO: const { ... } = myUser;
+
+// 7. Build a frequency object from this array
+const myLetters = ["a", "b", "a", "c", "b", "a"];
+const myCount = {}; // TODO: loop myLetters and count each
+console.log("counts:", myCount); // Expected: { a: 3, b: 2, c: 1 }
+
+// 8. Returns a frequency map from any array
+function myBuildFreq(arr) {
+  // TODO
+}
+console.log(myBuildFreq([1, 2, 2, 3, 3, 3]));       // Expected: { 1: 1, 2: 2, 3: 3 }
+console.log(myBuildFreq(["x", "y", "x", "z", "y"])); // Expected: { x: 2, y: 2, z: 1 }
+
+// 9. Returns the value that appears the most times
+function myMostCommon(arr) {
+  // TODO — build freq, then loop entries and track the best
+}
+console.log(myMostCommon([1, 2, 2, 3, 3, 3]));             // Expected: 3
+console.log(myMostCommon(["a", "b", "a", "c", "b", "a"])); // Expected: "a"

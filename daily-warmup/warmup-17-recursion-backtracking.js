@@ -251,10 +251,93 @@ function combinationSum2(candidates, target) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// 1. `subsets(nums)` — backtrack(start, current), push [...current] at every step
-// 2. `permutations(nums)` — backtrack(current, remaining), push when remaining empty
-// 3. `combinationSum(candidates, target)` — backtrack(start, current, remaining), reuse OK
-// 4. `combine(n, k)` — choose k from 1..n
-// 5. `letterCombinations(digits)` — phone map + backtrack on string
-// 6. `generateParenthesis(n)` — track open/close counts
-// 7. `exist(board, word)` — grid backtracking with visited mark/unmark
+
+// 1. Subsets — return all subsets of nums
+function mySubsets(nums) {
+  const result = [];
+  function backtrack(start, current) {
+    // TODO — push [...current], then loop from start, choose/explore/unchoose
+  }
+  backtrack(0, []);
+  return result;
+}
+console.log(mySubsets([1, 2, 3]));
+// Expected: [[], [1], [1,2], [1,2,3], [1,3], [2], [2,3], [3]]
+
+// 2. Permutations — return all orderings of nums
+function myPermutations(nums) {
+  const result = [];
+  function backtrack(current, remaining) {
+    // TODO — if remaining empty, push [...current]
+    //        else loop remaining, pick one, recurse with rest
+  }
+  backtrack([], nums);
+  return result;
+}
+console.log(myPermutations([1, 2, 3]));
+// Expected: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+
+// 3. Combination Sum — combos that sum to target (can reuse numbers)
+function myCombinationSum(candidates, target) {
+  const result = [];
+  function backtrack(start, current, remaining) {
+    // TODO — if remaining === 0 push, if < 0 return, else loop from start (reuse = i not i+1)
+  }
+  backtrack(0, [], target);
+  return result;
+}
+console.log(myCombinationSum([2, 3, 6, 7], 7)); // Expected: [[2,2,3], [7]]
+console.log(myCombinationSum([2, 3, 5], 8));     // Expected: [[2,2,2,2],[2,3,3],[3,5]]
+
+// 4. Combinations — choose k items from 1..n
+function myCombine(n, k) {
+  const result = [];
+  function backtrack(start, current) {
+    // TODO — if current.length === k, push copy
+  }
+  backtrack(1, []);
+  return result;
+}
+console.log(myCombine(4, 2)); // Expected: [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
+
+// 5. Phone letter combinations
+function myLetterCombinations(digits) {
+  if (!digits.length) return [];
+  const phone = {
+    "2": "abc", "3": "def", "4": "ghi", "5": "jkl",
+    "6": "mno", "7": "pqrs", "8": "tuv", "9": "wxyz",
+  };
+  const result = [];
+  function backtrack(index, current) {
+    // TODO — if index === digits.length, push current; else loop letters
+  }
+  backtrack(0, "");
+  return result;
+}
+console.log(myLetterCombinations("23"));
+// Expected: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+
+// 6. Generate valid parentheses
+function myGenerateParenthesis(n) {
+  const result = [];
+  function backtrack(current, open, close) {
+    // TODO — if length === 2*n push; if open < n add "("; if close < open add ")"
+  }
+  backtrack("", 0, 0);
+  return result;
+}
+console.log(myGenerateParenthesis(3));
+// Expected: ["((()))","(()())","(())()","()(())","()()()"]
+
+// 7. Word Search — find word in a grid
+function myExist(board, word) {
+  // TODO — loop all cells, try backtracking from each
+  //        mark visited with "#", restore after (backtrack!)
+  function backtrack(r, c, idx) {
+    // TODO
+  }
+  return false; // TODO: replace with actual logic
+}
+const myBoard = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]];
+console.log(myExist(myBoard, "ABCCED")); // Expected: true
+console.log(myExist([["A","B"],["C","D"]], "ABDC")); // Expected: true

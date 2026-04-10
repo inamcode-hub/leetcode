@@ -189,13 +189,76 @@ function isPalindromeList(head) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// 1. Class `ListNode` with constructor(val, next)
-// 2. Function `buildList(arr)` — array to linked list
-// 3. Function `toArray(head)` — linked list to array
-// 4. Function `getLength(head)` — count nodes
-// 5. Function `append(head, val)` — add node at end
-// 6. Function `prepend(head, val)` — add node at front
-// 7. Function `deleteNode(head, val)` — remove first node with value (use dummy!)
-// 8. Function `reverseList(head)` — reverse with prev/curr/next
-// 9. Function `findMiddle(head)` — slow/fast pointers
-// 10. Function `hasCycle(head)` — Floyd's tortoise and hare
+
+// 1. ListNode class
+class MyListNode {
+  constructor(val = 0, next = null) {
+    // TODO
+  }
+}
+
+// 2. Converts array to linked list
+function myBuildList(arr) {
+  // TODO — loop from end, wrap each in MyListNode
+}
+
+// 3. Converts linked list to array (for printing)
+function myToArray(head) {
+  // TODO — walk with while, push vals
+}
+
+// Test 2 & 3 together
+console.log(myToArray(myBuildList([10, 20, 30, 40, 50]))); // Expected: [10,20,30,40,50]
+console.log(myToArray(myBuildList([1, 2, 3])));             // Expected: [1,2,3]
+
+// 4. Count the number of nodes
+function myGetLength(head) {
+  // TODO
+}
+console.log(myGetLength(myBuildList([1, 2, 3, 4, 5]))); // Expected: 5
+console.log(myGetLength(myBuildList([])));                // Expected: 0
+
+// 5. Add a node at the end
+function myAppend(head, val) {
+  // TODO — walk to last node, set .next
+}
+console.log(myToArray(myAppend(myBuildList([1, 2, 3]), 4))); // Expected: [1,2,3,4]
+
+// 6. Add a node at the front (O(1))
+function myPrepend(head, val) {
+  // TODO — return new MyListNode(val, head)
+}
+console.log(myToArray(myPrepend(myBuildList([2, 3, 4]), 1))); // Expected: [1,2,3,4]
+
+// 7. Remove first node with given value (use dummy node!)
+function myDeleteNode(head, val) {
+  // TODO — dummy -> head, walk prev/curr, skip the matching node
+}
+console.log(myToArray(myDeleteNode(myBuildList([10, 20, 30, 40]), 30))); // Expected: [10,20,40]
+console.log(myToArray(myDeleteNode(myBuildList([10, 20, 30]), 10)));     // Expected: [20,30]
+
+// 8. Reverse a linked list — prev/curr/next pointers
+function myReverseList(head) {
+  // TODO — let prev = null, curr = head; flip links
+}
+console.log(myToArray(myReverseList(myBuildList([1, 2, 3, 4, 5])))); // Expected: [5,4,3,2,1]
+console.log(myToArray(myReverseList(myBuildList([10, 20]))));         // Expected: [20,10]
+
+// 9. Find the middle node — slow/fast pointers
+function myFindMiddle(head) {
+  // TODO — slow moves 1 step, fast moves 2 steps
+}
+console.log(myFindMiddle(myBuildList([1, 2, 3, 4, 5])).val); // Expected: 3
+console.log(myFindMiddle(myBuildList([1, 2, 3, 4, 5, 6])).val); // Expected: 4
+
+// 10. Detect if linked list has a cycle — Floyd's algorithm
+function myHasCycle(head) {
+  // TODO — slow/fast, if they meet -> true
+}
+// Test with cycle
+const myCycleList = myBuildList([1, 2, 3, 4]);
+let myTail = myCycleList;
+while (myTail.next) myTail = myTail.next;
+myTail.next = myCycleList.next; // 4 -> 2 (cycle)
+console.log(myHasCycle(myCycleList));             // Expected: true
+console.log(myHasCycle(myBuildList([1, 2, 3])));  // Expected: false

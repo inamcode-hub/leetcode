@@ -238,22 +238,86 @@ function sameFrequencyPair(nums) {
 // PRACTICE FROM SCRATCH — write everything below
 // without looking at the top of the file!
 // ════════════════════════════════════════════════
-// FREQUENCY:
-// 1. `freqCount(arr)` — returns {item: count} object
-// 2. `isAnagram(s, t)` — single-loop counter to check anagram
-// 3. `topKFrequent(nums, k)` — count + sort entries
-//
-// TWO SUM / COMPLEMENT:
-// 4. `twoSum(nums, target)` — store {value: index}, find complement
-// 5. `containsDuplicate(nums)` — Set has/add
-//
-// GROUP BY:
-// 6. `groupAnagrams(strs)` — sorted string as key
-//
-// PREFIX SUM:
-// 7. `buildPrefixSum(nums)` — prefix array for range sum queries
-// 8. `subarraySum(nums, k)` — count subarrays that sum to k
-//
-// INDEX MAP:
-// 9. `firstUnique(s)` — count then find first with count 1
-// 10. `longestConsecutive(nums)` — Set + only start from sequence beginning
+
+// --- FREQUENCY ---
+
+// 1. Returns { item: count } frequency object
+function myFreqCount(arr) {
+  // TODO
+}
+console.log(myFreqCount(["a", "b", "a", "c", "b", "a"])); // Expected: { a: 3, b: 2, c: 1 }
+console.log(myFreqCount([1, 1, 2, 3, 3, 3]));              // Expected: { 1: 2, 2: 1, 3: 3 }
+
+// 2. Check if t is an anagram of s — single-loop counter
+function myIsAnagram(s, t) {
+  // TODO — count[s[i]]++ and count[t[i]]--, check all zero
+}
+console.log(myIsAnagram("listen", "silent")); // Expected: true
+console.log(myIsAnagram("rat", "car"));       // Expected: false
+console.log(myIsAnagram("anagram", "nagaram")); // Expected: true
+
+// 3. Return the k most frequent elements
+function myTopKFrequent(nums, k) {
+  // TODO — count + sort entries by freq
+}
+console.log(myTopKFrequent([1, 1, 1, 2, 2, 3], 2)); // Expected: [1, 2]
+console.log(myTopKFrequent([4, 4, 5, 5, 5, 6], 1)); // Expected: [5]
+
+// --- TWO SUM / COMPLEMENT ---
+
+// 4. Return indices of two numbers that add up to target
+function myTwoSum(nums, target) {
+  // TODO — store {value: index}, look for complement
+}
+console.log(myTwoSum([2, 7, 11, 15], 9)); // Expected: [0, 1]
+console.log(myTwoSum([3, 2, 4], 6));       // Expected: [1, 2]
+
+// 5. Return true if any value appears twice
+function myContainsDuplicate(nums) {
+  // TODO — Set has/add
+}
+console.log(myContainsDuplicate([1, 2, 3, 1])); // Expected: true
+console.log(myContainsDuplicate([1, 2, 3, 4])); // Expected: false
+
+// --- GROUP BY ---
+
+// 6. Group strings that are anagrams — sorted string as key
+function myGroupAnagrams(strs) {
+  // TODO — map with sorted key, Object.values
+}
+console.log(myGroupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+// Expected: [["eat","tea","ate"], ["tan","nat"], ["bat"]] (order may vary)
+
+// --- PREFIX SUM ---
+
+// 7. Build prefix sum array — prefix[0] = 0, prefix[i] = sum of first i elements
+function myBuildPrefixSum(nums) {
+  // TODO
+}
+const myPrefix = myBuildPrefixSum([1, 2, 3, 4, 5]);
+console.log("prefix:", myPrefix);                          // Expected: [0, 1, 3, 6, 10, 15]
+console.log("sum [1..3]:", myPrefix[4] - myPrefix[1]);     // Expected: 9 (2+3+4)
+
+// 8. Count subarrays that sum to k — prefix sum + map
+function mySubarraySum(nums, k) {
+  // TODO — track prefix sums in a map, check if (sum - k) was seen
+}
+console.log(mySubarraySum([1, 1, 1], 2));    // Expected: 2
+console.log(mySubarraySum([1, 2, 3], 3));    // Expected: 2
+
+// --- INDEX MAP ---
+
+// 9. Return index of first non-repeating character
+function myFirstUnique(s) {
+  // TODO — count chars, then find first with count 1
+}
+console.log(myFirstUnique("leetcode")); // Expected: 0
+console.log(myFirstUnique("aabb"));     // Expected: -1
+console.log(myFirstUnique("loveleetcode")); // Expected: 2
+
+// 10. Length of longest consecutive sequence
+function myLongestConsecutive(nums) {
+  // TODO — Set, only start counting from sequence beginning (no n-1 in set)
+}
+console.log(myLongestConsecutive([100, 4, 200, 1, 3, 2])); // Expected: 4
+console.log(myLongestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1])); // Expected: 9
